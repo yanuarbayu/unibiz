@@ -1,11 +1,793 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. UNIBIZ KREASINDO UTAMA | Indokontraktor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f9fb;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 18px;
+            color: #003366;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            background: #eef1f5;
+            padding: 10px 40px;
+            font-size: 14px;
+        }
+
+        .breadcrumb span {
+            color: #007bff;
+        }
+
+        /* BANNER */
+        .banner {
+            background: url('https://images.unsplash.com/photo-1604964432806-254d06deac3a?auto=format&fit=crop&w=1200&q=60') center/cover;
+            color: white;
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            inset: 0;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 18px;
+        }
+
+        /* COMPANY INFO */
+        .company {
+            padding: 60px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .company-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .company-card img {
+            width: 45%;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        .company-card .info {
+            padding: 30px 40px;
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .company-card h3 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .company-card p {
+            margin: 8px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* SERVICES / LICENSE CARDS */
+       /* LICENSES SECTION */
+.licenses {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.license-card {
+    background: #4a4a4a;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    padding: 25px 30px;
+    transition: all 0.3s ease;
+}
+
+/* Saat layar kecil */
+@media (max-width: 900px) {
+    .licenses {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Saat layar sangat kecil (misal HP di bawah 500px) tetap 1 kolom */
+@media (max-width: 500px) {
+    .licenses {
+        grid-template-columns: 2fr;
+    }
+}
+
+
+        .license-card:hover {
+            transform: translateY(-5px);
+            background: #333;
+        }
+
+        .license-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .license-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #eee;
+        }
+
+        .license-card a {
+            color: #00b4ff;
+            text-decoration: none;
+        }
+
+        .license-card button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: white;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .license-card button:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        /* CONTACT FORM */
+        .contact {
+            background: #f0f4f8;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #003366;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .company-card {
+                flex-direction: column;
+            }
+
+            .company-card img {
+                width: 100%;
+            }
+
+            .licenses {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .license-card {
+                width: 90%;
+            }
+        }
+
+        /* Keunggulan Section */
+    .features {padding:60px 40px;}
+    .features h2 {color:#003366;font-size:22px;margin-bottom:20px;border-bottom:3px solid #007bff;display:inline-block;padding-bottom:5px;}
+    .feature-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;}
+    .feature-card {background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:25px;border-left:4px solid #007bff;transition:.3s;}
+    .feature-card:hover{transform:translateY(-5px);}
+    .feature-card h3 {font-size:18px;color:#003366;margin-bottom:10px;}
+    .feature-card p {font-size:14px;color:#555;line-height:1.6;}
+
+    .company{padding:60px 40px;display:flex;justify-content:center;}
+    .company-card{background:white;border-radius:12px;box-shadow:0 5px 10px rgba(0,0,0,0.1);max-width:1000px;display:flex;overflow:hidden;}
+    .company-card img{width:45%;object-fit:cover;aspect-ratio:4/3;}
+    .company-card .info{padding:30px 40px;width:55%;display:flex;flex-direction:column;justify-content:center;}
+    .company-card h3{color:#003366;margin-bottom:15px;font-size:22px;}
+    .company-card p{margin:8px 0;font-size:15px;line-height:1.6;}
+
+     @media(max-width:900px){
+      .company-card{flex-direction:column;}
+      .company-card img{width:100%;}
+      .company-card .info{width:100%;padding:25px;}
+    }
+
+     /* HEADER */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .logo h1 {
+      font-size: 18px;
+      color: #003366;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: white;
+      top: 35px;
+      left: 0;
+      min-width: 160px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      flex-direction: column;
+      z-index: 20;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 15px;
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 18px;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 100%;
+      background: #333;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    /* RESPONSIVE MENU */
+    @media (max-width: 900px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 10px;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f0f0f0;
+        width: 100%;
+      }
+
+      .dropdown-menu a {
+        padding-left: 25px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Other sections kept same as your version */
+    .breadcrumb {
+      background: #eef1f5;
+      padding: 10px 40px;
+      font-size: 14px;
+    }
+
+    .breadcrumb span {
+      color: #007bff;
+    }
+
+    .banner {
+      background: url('https://images.unsplash.com/photo-1604964432806-254d06deac3a?auto=format&fit=crop&w=1200&q=60')
+        center/cover;
+      color: white;
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .banner::after {
+      content: '';
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      inset: 0;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 18px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    /* ====== STATISTICS SECTION ====== */
+.stats {
+  padding: 60px 40px;
+  background: #f9fbff;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card .icon {
+  font-size: 40px;
+  color: #4a6cf7;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  color: #003366;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* RESPONSIVE GRID: 2 kolom di layar kecil */
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    </style>
 </head>
 <body>
-  
+
+    <!-- Header -->
+    <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="https://indokontraktor.com/images/logo.png" alt="Indokontraktor Logo" />
+      <h1>INDOKONTRAKTOR</h1>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#">Tender</a></li>
+
+        <li class="dropdown">
+          <a href="#">Gedung ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Perkantoran</a>
+            <a href="#">Sekolah</a>
+            <a href="#">Rumah Sakit</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Sipil ▾</a>
+          <div class="dropdown-menu">
+            <a href="#">Jalan & Jembatan</a>
+            <a href="#">Drainase</a>
+          </div>
+        </li>
+
+        <li><a href="#">Instalasi</a></li>
+        <li><a href="#">Elektrikal</a></li>
+        <li><a href="#">Spesialis</a></li>
+        <li><a href="#">Perencana</a></li>
+        <li><a href="#">Pengawas</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <p>Home › Company › <span>PT Unibiz Kreasindo Utama Kota Depok</span></p>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>PT. UNIBIZ KREASINDO UTAMA</h2>
+            <p>Kontraktor profesional dalam bidang konstruksi, sipil, dan instalasi di wilayah Depok.</p>
+        </div>
+    </section>
+
+    <!-- Company Info -->
+    <section class="company">
+        <div class="company-card">
+            <img src="w" alt="Construction">
+            <div class="info">
+                <h3>PT. UNIBIZ KREASINDO UTAMA</h3>
+                <p><strong>Alamat:</strong> Jl. Margonda Raya No. 123, Kota Depok, Jawa Barat</p>
+                <p><strong>Bidang Usaha:</strong> Konstruksi Gedung, Sipil, Mekanikal & Elektrikal</p>
+                <p><strong>Email:</strong> info@unibizkreasindo.co.id</p>
+                <p><strong>Telepon:</strong> (021) 8765 4321</p>
+                <p><strong>Tahun Berdiri:</strong> 2010</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="icon">📅</div>
+      <h3>Pengalaman Luas</h3>
+      <p>Melebihi 10 tahun</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon">🏗️</div>
+      <h3>Task Finished</h3>
+      <p>Over 100 pekerjaan</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon">👥</div>
+      <h3>Tim Profesional</h3>
+      <p>Lebih dari 20 pegawai</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- License Cards Section -->
+    <section class="licenses">
+        <div class="license-card">
+            <h4>BG002 Konstruksi Gedung Perkantoran</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Perkantoran dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41012</a> yang diakui LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>MORE INFO</button>
+        </div>
+
+        <div class="license-card">
+            <h4>BG003 Konstruksi Gedung Industri</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Industri dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41013</a> yang disertifikasi LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>LIHAT DETAIL</button>
+        </div>
+
+        <div class="license-card">
+            <h4>BG003 Konstruksi Gedung Industri</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Industri dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41013</a> yang disertifikasi LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>LIHAT DETAIL</button>
+        </div>
+
+        <div class="license-card">
+            <h4>BG003 Konstruksi Gedung Industri</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Industri dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41013</a> yang disertifikasi LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>LIHAT DETAIL</button>
+        </div>
+
+        <div class="license-card">
+            <h4>BG003 Konstruksi Gedung Industri</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Industri dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41013</a> yang disertifikasi LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>LIHAT DETAIL</button>
+        </div>
+
+        <div class="license-card">
+            <h4>BG003 Konstruksi Gedung Industri</h4>
+            <p>PT. UNIBIZ KREASINDO UTAMA memiliki izin kegiatan Konstruksi Gedung Industri dengan kualifikasi Umum sesuai dengan KBLI 
+            <a href="#">41013</a> yang disertifikasi LPJK Kementerian Pekerjaan Umum (PU).</p>
+            <button>LIHAT DETAIL</button>
+        </div>
+    </section>
+
+    <section class="features">
+  <h2>Keunggulan PT. UNIBIZ KREASINDO UTAMA</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>💼 Tim Profesional</h3>
+      <p>Keunggulan kami terletak pada tim profesional berpengalaman luas, teknologi konstruksi terkini, dan kemitraan strategis dengan pemasok dan mitra bisnis.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚙️ Teknologi Advanced</h3>
+      <p>Kami memanfaatkan pengembangan teknologi modern untuk memastikan hasil yang presisi, efisien, dan efektif.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🛡️ Kejujuran & Security</h3>
+      <p>Kami menekankan integritas, keamanan, dan kepuasan pelanggan sebagai prioritas utama dalam setiap proyek.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🤝 Budaya Kerja</h3>
+      <p>Budaya kerja kami mengedepankan kolaborasi, etika kerja tinggi, dan semangat inovasi untuk menghadapi tantangan proyek modern.</p>
+    </div>
+  </div>
+</section>
+
+<section class="company">
+  <div class="company-card">
+    <img src="https://images.unsplash.com/photo-1581091870622-4f9b8bce420d?auto=format&fit=crop&w=1200&q=60" alt="Construction">
+    <div class="info">
+      <h3>PT. UNIBIZ KREASINDO UTAMA</h3>
+      <p><strong>Alamat:</strong> Jl. Margonda Raya No. 123, Kota Depok, Jawa Barat</p>
+      <p><strong>Bidang Usaha:</strong> Konstruksi Gedung, Sipil, Mekanikal & Elektrikal</p>
+      <p><strong>Email:</strong> info@unibizkreasindo.co.id</p>
+      <p><strong>Telepon:</strong> (021) 8765 4321</p>
+      <p><strong>Tahun Berdiri:</strong> 2010</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Form -->
+    <!-- <section class="contact">
+        <h2>Hubungi Kami</h2>
+        <form action="#" method="post">
+            <label>Nama</label>
+            <input type="text" name="nama" placeholder="Masukkan nama anda" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Masukkan email anda" required>
+
+            <label>Pesan</label>
+            <textarea name="pesan" rows="5" placeholder="Tulis pesan anda..." required></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section> -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PT. UNIBIZ KREASINDO UTAMA. Semua hak dilindungi.</p>
+    </footer>
+
 </body>
+
+ <script>
+    // Toggle hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    // Dropdown for mobile
+    const dropdowns = document.querySelectorAll('.dropdown > a');
+    dropdowns.forEach((menu) => {
+      menu.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          const parent = menu.parentElement;
+          parent.classList.toggle('open');
+        }
+      });
+    });
+  </script>
 </html>
