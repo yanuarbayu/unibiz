@@ -1,11 +1,1798 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Unibiz Kreasindo Utama | Kontraktor Profesional Depok</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      // Konfigurasi Tailwind untuk font kustom dan glassmorphism
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            backdropBlur: {
+              xs: "2px",
+            },
+            colors: {
+              glass: "rgba(255, 255, 255, 0.1)",
+              "glass-dark": "rgba(0, 0, 0, 0.1)",
+              primary: "#1e40af",
+              "primary-dark": "#1e3a8a",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Animasi untuk muncul dari bawah */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Glassmorphism effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .glass-dark {
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Gradient backgrounds */
+      .gradient-bg {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      }
+
+      .gradient-bg-light {
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #1e40af;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #1e3a8a;
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 5s ease-in-out infinite;
+      }
+
+      /* Shimmer effect for cards */
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shimmer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header & Navigasi -->
+    <header
+      class="bg-white/95 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300"
+    >
+      <nav class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a
+            href="#home"
+            class="text-xl font-bold text-gray-800 flex items-center"
+          >
+            <div class="bg-blue-600 p-2 rounded-lg mr-3">
+              <i class="fas fa-hard-hat text-white text-lg"></i>
+            </div>
+            <span>Unibiz Kontraktor</span>
+          </a>
+
+          <!-- Menu Desktop -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="home"
+              >Beranda</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="about"
+              >Tentang</a
+            >
+            <a
+              href="#seputar-pt"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="seputar-pt"
+              >Seputar</a
+            >
+            <a
+              href="#services"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="services"
+              >Layanan</a
+            >
+            <a
+              href="#keunggulan"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="keunggulan"
+              >Keunggulan</a
+            >
+            <a
+              href="#faq"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="faq"
+              >FAQ</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
+              data-section="contact"
+              >Kontak</a
+            >
+          </div>
+
+          <!-- Tombol Hubungi Kami (Desktop) -->
+          <!-- <a
+            href="#contact"
+            class="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold shadow-md"
+          >
+            Hubungi Kami
+          </a> -->
+
+          <!-- Tombol Menu Mobile -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden focus:outline-none text-gray-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border"
+        >
+          <a
+            href="#home"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="home"
+            >Beranda</a
+          >
+          <a
+            href="#about"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="about"
+            >Tentang</a
+          >
+          <a
+            href="#seputar-pt"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="seputar-pt"
+            >Seputar</a
+          >
+          <a
+            href="#services"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="services"
+            >Layanan</a
+          >
+          <a
+            href="#keunggulan"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="keunggulan"
+            >Keunggulan</a
+          >
+          <a
+            href="#faq"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
+            data-section="faq"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300"
+            data-section="contact"
+            >Kontak</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      // Function untuk update active nav link
+      function updateActiveNavLink() {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const scrollPosition = window.scrollY + 100; // Offset untuk trigger lebih awal
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        // Remove active class dari semua links
+        navLinks.forEach((link) => {
+          link.classList.remove("text-blue-600", "font-semibold");
+          link.classList.add("text-gray-600");
+        });
+
+        // Add active class ke current section link
+        if (currentSection) {
+          const activeLink = document.querySelector(
+            `.nav-link[data-section="${currentSection}"]`
+          );
+          if (activeLink) {
+            activeLink.classList.remove("text-gray-600");
+            activeLink.classList.add("text-blue-600", "font-semibold");
+          }
+        }
+      }
+
+      // Event listener untuk scroll
+      window.addEventListener("scroll", updateActiveNavLink);
+
+      // Event listener untuk page load
+      document.addEventListener("DOMContentLoaded", function () {
+        updateActiveNavLink();
+
+        // Smooth scroll untuk nav links
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+              // Close mobile menu jika terbuka
+              const mobileMenu = document.getElementById("mobile-menu");
+              mobileMenu.classList.add("hidden");
+
+              // Smooth scroll ke section
+              window.scrollTo({
+                top: targetSection.offsetTop - 80, // Offset untuk navbar fixed
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Active link styles */
+      .nav-link.active {
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      /* Optional: Add a subtle underline for active link */
+      .nav-link.text-blue-600 {
+        position: relative;
+      }
+
+      .nav-link.text-blue-600::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #2563eb;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+
+      /* For mobile menu active links */
+      #mobile-menu .nav-link.text-blue-600::after {
+        bottom: 12px;
+        width: 4px;
+        height: 20px;
+        left: 0;
+        border-radius: 0 2px 2px 0;
+      }
+    </style>
+
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="relative h-screen flex items-center justify-center text-white"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <!-- Overlay gradasi biru -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-600/50"
+        ></div>
+
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <!-- Main Heading -->
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Kontraktor Profesional
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-xl md:text-2xl mb-10 text-blue-100">
+            Wujudkan rumah impian Anda dengan kualitas terbaik
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact"
+              class="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition duration-300 font-semibold"
+            >
+              Konsultasi Gratis
+            </a>
+
+            <a
+              href="#projects"
+              class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-900 transition duration-300 font-semibold"
+            >
+              Lihat Proyek
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <a href="#about" class="text-white animate-bounce">
+            <i class="fas fa-chevron-down text-xl"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Tentang Kami / Profil Perusahaan -->
+      <section id="about" class="py-20 bg-gradient-to-br from-white to-blue-50">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Gambar -->
+            <div class="lg:w-1/2 fade-in-up">
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop"
+                  alt="Proyek Konstruksi"
+                  class="rounded-2xl shadow-2xl w-full"
+                />
+                <div
+                  class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl"
+                >
+                  <p class="text-3xl font-bold">15+</p>
+                  <p class="text-sm">Tahun Pengalaman</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Konten -->
+            <div class="lg:w-1/2 fade-in-up">
+              <div class="glass rounded-2xl p-8 shadow-xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                  Tentang
+                  <span class="text-primary">PT. Unibiz Kreasindo Utama</span>
+                </h2>
+
+                <p class="text-gray-600 mb-6">
+                  PT. Unibiz Kreasindo Utama adalah perusahaan kontraktor yang
+                  berdomisili di Kota Depok dan berfokus pada bidang
+                  <strong>pelaksanaan konstruksi</strong>. Sebagai anggota resmi
+                  <strong>Asosiasi GAPENSI</strong>, kami memiliki track record
+                  yang solid dan menjunjung tinggi profesionalisme dalam setiap
+                  proyek.
+                </p>
+
+                <!-- Legalitas & Sertifikasi -->
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  Legalitas & Standar Kualitas
+                </h3>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                  <div
+                    class="flex items-center p-3 bg-white rounded-xl shadow-md"
+                  >
+                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                      <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-500">NIB</p>
+                      <p class="text-sm font-semibold">0220*****0729</p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center p-3 bg-white rounded-xl shadow-md"
+                  >
+                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                      <i class="fas fa-award text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs text-gray-500">Asosiasi</p>
+                      <p class="text-sm font-semibold">GAPENSI</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-xl mb-6"
+                >
+                  <p class="text-sm text-gray-700">
+                    Kami menerapkan standar mutu dan keamanan yang mengacu pada
+                    regulasi nasional dan internasional, termasuk
+                    <strong>ISO 9001</strong> (Manajemen Mutu),
+                    <strong>ISO 14001</strong> (Lingkungan),
+                    <strong>ISO 45001</strong> (K3), serta standar lainnya untuk
+                    memastikan hasil kerja terbaik.
+                  </p>
+                </div>
+
+                <!-- Klasifikasi Layanan -->
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                  Klasifikasi Layanan Utama
+                </h3>
+                <ul class="space-y-2 text-gray-600 mb-6">
+                  <li class="flex items-start">
+                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    </div>
+                    <span
+                      ><strong>BG002:</strong> Konstruksi Gedung
+                      Perkantoran</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    </div>
+                    <span
+                      ><strong>BG003:</strong> Konstruksi Gedung Industri</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    </div>
+                    <span
+                      ><strong>BG005:</strong> Konstruksi Gedung Kesehatan</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    </div>
+                    <span
+                      ><strong>EL007:</strong> Instalasi Jaringan Listrik
+                      Tegangan Rendah</span
+                    >
+                  </li>
+                  <li
+                    class="flex items-start text-sm font-semibold text-blue-600"
+                  >
+                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-ellipsis-h text-blue-600 text-xs"></i>
+                    </div>
+                    <span>Dan 6 layanan terkait lainnya.</span>
+                  </li>
+                </ul>
+
+                <p class="text-gray-600">
+                  Kami berkomitmen untuk menjadi rekan bisnis yang solid dalam
+                  mendukung pertumbuhan infrastruktur dan pembangunan di
+                  Indonesia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seputar PT. UNIBIZ KREASINDO UTAMA -->
+      <section id="seputar-pt" class="py-20 gradient-bg-light text-white">
+        <div class="container mx-auto px-6">
+          <!-- Header Section -->
+          <div class="text-center mb-16 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Seputar PT. Unibiz Kreasindo Utama
+            </h2>
+            <p class="text-lg max-w-3xl mx-auto opacity-90">
+              Perusahaan konstruksi unggulan di Kota Depok yang telah eksis lama
+              dan menjadi pioneer dalam bidang infrastruktur dan pembangunan
+              komersial berkapasitas besar.
+            </p>
+          </div>
+
+          <!-- Statistik Pengalaman -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div
+              class="glass rounded-2xl p-8 text-center fade-in-up shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div
+                class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-history text-2xl"></i>
+              </div>
+              <h3 class="text-4xl font-bold mb-2">
+                X+<span class="text-blue-200"> Tahun</span>
+              </h3>
+              <p class="opacity-90">Pengalaman Luas</p>
+            </div>
+            <div
+              class="glass rounded-2xl p-8 text-center fade-in-up shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div
+                class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-check-circle text-2xl"></i>
+              </div>
+              <h3 class="text-4xl font-bold mb-2">
+                100+<span class="text-blue-200"> Proyek</span>
+              </h3>
+              <p class="opacity-90">Task Finished</p>
+            </div>
+            <div
+              class="glass rounded-2xl p-8 text-center fade-in-up shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div
+                class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-users text-2xl"></i>
+              </div>
+              <h3 class="text-4xl font-bold mb-2">
+                20+<span class="text-blue-200"> Orang</span>
+              </h3>
+              <p class="opacity-90">Tim Profesional</p>
+            </div>
+          </div>
+
+          <!-- Tekad & Komitmen Perusahaan -->
+          <div class="glass rounded-2xl p-8 md:p-12 shadow-2xl fade-in-up">
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Tekad PT. Unibiz Kreasindo Utama
+            </h3>
+            <p class="text-center leading-relaxed max-w-4xl mx-auto opacity-90">
+              Dengan konsentrasi pada standar tinggi, pembaharuan, dan layanan
+              klien yang superior, kami konsisten berkembang menjadi
+              <strong>leader</strong> di sektor pembangunan. Kami berkomitmen
+              untuk turut serta dalam pembangunan prasarana yang
+              <strong>eco-friendly</strong> dan memberikan manfaat lebih bagi
+              masyarakat Indonesia.
+            </p>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="text-center mt-12 fade-in-up">
+            <p class="opacity-90 mb-4">
+              Pelajari lebih lanjut tentang layanan dan proyek kami.
+            </p>
+            <a
+              href="#contact"
+              class="bg-white text-primary px-8 py-3 rounded-full hover:bg-blue-50 transition duration-300 font-semibold shadow-lg inline-flex items-center"
+            >
+              <i class="fas fa-phone-alt mr-2"></i> Hubungi Kami Sekarang
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layanan Kami Detail -->
+      <section
+        id="services"
+        class="py-20 bg-gradient-to-br from-gray-50 to-white"
+      >
+        <div class="container mx-auto px-6">
+          <!-- Header Section -->
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Pelayanan
+              <span class="text-primary">PT. Unibiz Kreasindo Utama</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Kami melayani jasa konstruksi di berbagai sektor proyek, baik
+              skala kecil maupun besar. Didukung tenaga ahli dan pengalaman
+              luas, kami berkomitmen memberikan hasil terbaik sesuai standar dan
+              jadwal.
+            </p>
+          </div>
+
+          <!-- Accordion Container -->
+          <div class="max-w-4xl mx-auto fade-in-up">
+            <!-- Category 1: Bangunan Gedung -->
+            <div class="mb-4">
+              <button
+                onclick="toggleAccordion('bangunan')"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span
+                  class="text-lg font-semibold text-gray-800 flex items-center"
+                >
+                  <i class="fas fa-building mr-3 text-primary"></i>
+                  Bangunan Gedung
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="bangunan"
+                class="accordion-content hidden mt-4 space-y-4"
+              >
+                <!-- Service Card 1 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >BG002</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Konstruksi Gedung Perkantoran
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Layanan konstruksi untuk gedung perkantoran dengan
+                        kualifikasi <strong>Umum</strong> (KBLI 41012) yang
+                        telah diakui oleh LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >BG003</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Konstruksi Gedung Industri
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Layanan konstruksi untuk gedung industri dengan
+                        kualifikasi <strong>Umum</strong> (KBLI 41013) yang
+                        disertifikasi oleh LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >BG005</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Konstruksi Gedung Kesehatan
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Layanan konstruksi untuk gedung kesehatan dengan
+                        kualifikasi <strong>Umum</strong> (KBLI 41015) yang
+                        disertifikasi oleh LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Instalasi Listrik -->
+            <div class="mb-4">
+              <button
+                onclick="toggleAccordion('listrik')"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span
+                  class="text-lg font-semibold text-gray-800 flex items-center"
+                >
+                  <i class="fas fa-bolt mr-3 text-yellow-500"></i>
+                  Instalasi Listrik
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="listrik" class="accordion-content hidden mt-4 space-y-4">
+                <!-- Service Card 1 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >EL007</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Instalasi Jaringan Distribusi Listrik Tegangan Rendah
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Jasa konstruksi <strong>expert</strong> dengan kualitas
+                        terbaik dan <strong>level safety yang tinggi</strong>,
+                        diakui LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >EL010</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Instalasi Tenaga Listrik Gedung dan Pabrik
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Jasa konstruksi <strong>expert</strong> dengan
+                        <strong>quality excellent</strong> dan
+                        <strong>kriteria security yang ketat</strong>,
+                        disertifikasi LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >EL011</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Instalasi Elektrikal Lainnya
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Jasa konstruksi <strong>expert</strong> dengan
+                        <strong>mutu prima</strong> dan
+                        <strong>standar keamanan tinggi</strong>, disertifikasi
+                        LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Mekanikal & Plumbing -->
+            <div class="mb-4">
+              <button
+                onclick="toggleAccordion('mekanikal')"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span
+                  class="text-lg font-semibold text-gray-800 flex items-center"
+                >
+                  <i class="fas fa-tools mr-3 text-green-500"></i>
+                  Mekanikal & Plumbing
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="mekanikal"
+                class="accordion-content hidden mt-4 space-y-4"
+              >
+                <!-- Service Card 1 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >MK001</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Pemasangan AC, Pemanas & Ventilasi
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Pelayanan <strong>ahli</strong> dengan
+                        <strong>mutu prima</strong> dan
+                        <strong>standar keamanan tinggi</strong>, mendapat
+                        lisensi dari LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >MK002</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Pemasangan Pipa Air (Plumbing)
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Jasa konstruksi <strong>expert</strong> dengan
+                        <strong>quality excellent</strong> dan
+                        <strong>kriteria security yang ketat</strong>, mendapat
+                        lisensi dari LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-all duration-300"
+                >
+                  <div class="flex items-start">
+                    <span
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      >MK005</span
+                    >
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                        Pemasangan Lift dan Tangga Berjalan
+                      </h3>
+                      <p class="text-gray-600 text-sm">
+                        Jasa konstruksi <strong>expert</strong> dengan
+                        <strong>kualitas terbaik</strong> dan
+                        <strong>level safety yang tinggi</strong>, terdaftar di
+                        LPJK Kementerian PUPR.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="text-center mt-12 fade-in-up">
+            <p class="text-gray-600 mb-4">
+              Butuh konsultasi untuk proyek Anda? Tim kami siap membantu.
+            </p>
+            <a
+              href="#contact"
+              class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary-dark transition duration-300 font-semibold shadow-lg inline-flex items-center"
+            >
+              <i class="fas fa-comments mr-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Keunggulan Kami -->
+      <section
+        id="keunggulan"
+        class="py-20 bg-gradient-to-br from-white to-blue-50"
+      >
+        <div class="container mx-auto px-6">
+          <!-- Header Section -->
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Keunggulan
+              <span class="text-primary">PT. Unibiz Kreasindo Utama</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Kami membangun kepercayaan melalui komitmen terhadap kualitas,
+              integritas, dan inovasi dalam setiap proyek.
+            </p>
+          </div>
+
+          <!-- Grid Keunggulan -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Keunggulan 1: Tim Profesional -->
+            <div
+              class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
+            >
+              <div
+                class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-users text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Tim Profesional
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Didukung tim berpengalaman luas, teknologi terkini, dan
+                kemitraan strategis untuk hasil proyek yang optimal.
+              </p>
+            </div>
+
+            <!-- Keunggulan 2: Teknologi Advanced -->
+            <div
+              class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
+            >
+              <div
+                class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-microchip text-green-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Teknologi Advanced
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Penerapan teknologi modern untuk memastikan setiap deliverable
+                presisi, efektif, dan sesuai standar tertinggi.
+              </p>
+            </div>
+
+            <!-- Keunggulan 3: Kejujuran & Security -->
+            <div
+              class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
+            >
+              <div
+                class="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-shield-alt text-yellow-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Kejujuran & Security
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Integritas adalah fondasi kami. Berkomitmen pada keamanan
+                proyek, kepuasan pelanggan, dan keberlanjutan lingkungan.
+              </p>
+            </div>
+
+            <!-- Keunggulan 4: Budaya Kerja -->
+            <div
+              class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
+            >
+              <div
+                class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-handshake text-purple-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Budaya Kerja
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Membangun lingkungan yang inklusif dan kolaboratif untuk
+                mendorong inovasi, etika kerja tinggi, dan solusi proaktif.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Proyek -->
+      <section
+        id="gallery"
+        class="py-20 bg-gradient-to-br from-gray-50 to-white"
+      >
+        <div class="container mx-auto px-6">
+          <!-- Header Section -->
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Gallery
+              <span class="text-primary">PT. Unibiz Kreasindo Utama</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Jelajahi hasil kerja lapangan kami yang menunjukkan standar
+              profesional dan komitmen dalam setiap proyek, dari perencanaan
+              hingga serah terima.
+            </p>
+          </div>
+
+          <!-- Grid Gallery -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          >
+            <!-- Gambar 1 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-1/600/400.jpg"
+                  alt="Dokumentasi Proyek 1"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 1
+              </figcaption>
+            </figure>
+            <!-- Gambar 2 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-2/600/400.jpg"
+                  alt="Dokumentasi Proyek 2"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 2
+              </figcaption>
+            </figure>
+            <!-- Gambar 3 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-3/600/400.jpg"
+                  alt="Dokumentasi Proyek 3"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 3
+              </figcaption>
+            </figure>
+            <!-- Gambar 4 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-4/600/400.jpg"
+                  alt="Dokumentasi Proyek 4"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 4
+              </figcaption>
+            </figure>
+            <!-- Gambar 5 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-5/600/400.jpg"
+                  alt="Dokumentasi Proyek 5"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 5
+              </figcaption>
+            </figure>
+            <!-- Gambar 6 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-6/600/400.jpg"
+                  alt="Dokumentasi Proyek 6"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 6
+              </figcaption>
+            </figure>
+            <!-- Gambar 7 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-7/600/400.jpg"
+                  alt="Dokumentasi Proyek 7"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 7
+              </figcaption>
+            </figure>
+            <!-- Gambar 8 -->
+            <figure class="fade-in-up group">
+              <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://picsum.photos/seed/unibiz-project-8/600/400.jpg"
+                  alt="Dokumentasi Proyek 8"
+                  class="gallery-item w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                </div>
+              </div>
+              <figcaption class="text-center mt-2 text-sm text-gray-600">
+                Dokumentasi Proyek 8
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Container -->
+      <div
+        id="lightbox"
+        class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4"
+      >
+        <button
+          id="lightbox-close"
+          class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-10"
+        >
+          &times;
+        </button>
+        <img
+          id="lightbox-img"
+          src=""
+          alt="Gambar Proyek"
+          class="max-w-full max-h-full rounded-lg"
+        />
+      </div>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="container mx-auto px-6">
+          <!-- Header Section -->
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Pertanyaan yang Sering Diajukan
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Temukan jawaban untuk pertanyaan umum tentang layanan dan komitmen
+              kami. Jika Anda tidak menemukan yang Anda cari, jangan ragu untuk
+              menghubungi kami langsung.
+            </p>
+          </div>
+
+          <!-- Accordion Container -->
+          <div class="max-w-4xl mx-auto space-y-4 fade-in-up">
+            <!-- FAQ Item 1 -->
+            <div class="glass rounded-2xl shadow-lg overflow-hidden">
+              <button
+                onclick="toggleAccordion('faq-0')"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span class="font-semibold text-gray-800"
+                  >Bagaimana proses kerja sama dengan perusahaan konstruksi
+                  Anda?</span
+                >
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-0" class="accordion-content hidden px-5 pb-5">
+                <p class="text-gray-600">
+                  Kami mengutamakan kerjasama yang transparan dan saling
+                  menguntungkan dengan klien. Mulai dari tahap perencanaan
+                  hingga pelaksanaan proyek, kami berkomitmen untuk memberikan
+                  hasil terbaik.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="glass rounded-2xl shadow-lg overflow-hidden">
+              <button
+                onclick="toggleAccordion('faq-1')"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span class="font-semibold text-gray-800"
+                  >Apakah perusahaan Anda menerima subkontrak atau proyek
+                  kecil?</span
+                >
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-1" class="accordion-content hidden px-5 pb-5">
+                <p class="text-gray-600">
+                  Ya, kami terbuka untuk bekerja sama dalam proyek besar maupun
+                  kecil sesuai dengan kebutuhan klien.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="glass rounded-2xl shadow-lg overflow-hidden">
+              <button
+                onclick="toggleAccordion('faq-2')"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span class="font-semibold text-gray-800"
+                  >Bagaimana perusahaan Anda memastikan kepatuhan terhadap
+                  regulasi keselamatan kerja?</span
+                >
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-2" class="accordion-content hidden px-5 pb-5">
+                <p class="text-gray-600">
+                  Kami memiliki tim keselamatan kerja yang berkomitmen untuk
+                  memastikan kepatuhan terhadap semua regulasi keselamatan kerja
+                  yang berlaku.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="glass rounded-2xl shadow-lg overflow-hidden">
+              <button
+                onclick="toggleAccordion('faq-3')"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span class="font-semibold text-gray-800"
+                  >Apakah perusahaan Anda memiliki program keberlanjutan atau
+                  ramah lingkungan?</span
+                >
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-3" class="accordion-content hidden px-5 pb-5">
+                <p class="text-gray-600">
+                  Kami aktif dalam memperhatikan aspek keberlanjutan dalam
+                  setiap proyek yang kami kerjakan, termasuk penggunaan material
+                  ramah lingkungan dan praktik konstruksi yang berkelanjutan.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="glass rounded-2xl shadow-lg overflow-hidden">
+              <button
+                onclick="toggleAccordion('faq-4')"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+              >
+                <span class="font-semibold text-gray-800"
+                  >Bagaimana cara mengajukan penawaran kerjasama dengan
+                  perusahaan konstruksi Anda?</span
+                >
+                <svg
+                  class="accordion-icon w-6 h-6 text-gray-600 transform transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="faq-4" class="accordion-content hidden px-5 pb-5">
+                <p class="text-gray-600">
+                  Silakan hubungi kami melalui formulir kontak di website atau
+                  melalui kontak yang tersedia untuk mendapatkan informasi lebih
+                  lanjut tentang kerjasama.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak Kami -->
+      <section
+        id="contact"
+        class="py-20 bg-gradient-to-br from-primary to-primary-dark text-white"
+      >
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+            <p class="opacity-90">
+              Siap untuk mewujudkan proyek konstruksi Anda? Hubungi kami
+              sekarang!
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Formulir Kontak -->
+            <div class="lg:w-1/2 glass rounded-2xl p-8 shadow-2xl fade-in-up">
+              <form id="contact-form">
+                <div class="mb-6">
+                  <label for="name" class="block font-semibold mb-2"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-white placeholder-white placeholder-opacity-70"
+                    placeholder="Nama lengkap Anda"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label for="email" class="block font-semibold mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-white placeholder-white placeholder-opacity-70"
+                    placeholder="email@contoh.com"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label for="phone" class="block font-semibold mb-2"
+                    >No. Telepon</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-white placeholder-white placeholder-opacity-70"
+                    placeholder="08xx-xxxx-xxxx"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label for="message" class="block font-semibold mb-2"
+                    >Pesan</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-white placeholder-white placeholder-opacity-70"
+                    placeholder="Tulis pesan Anda di sini..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-white text-primary py-3 rounded-lg hover:bg-blue-50 transition duration-300 font-semibold shadow-lg"
+                >
+                  Kirim Pesan
+                </button>
+              </form>
+            </div>
+            <!-- Info Kontak & Peta -->
+            <div class="lg:w-1/2 fade-in-up">
+              <div class="glass rounded-2xl p-8 shadow-2xl mb-6">
+                <h3 class="text-2xl font-semibold mb-4">Informasi Kontak</h3>
+                <div class="space-y-4">
+                  <p class="flex items-center opacity-90">
+                    <i
+                      class="fas fa-map-marker-alt text-white text-xl mr-4 w-6 text-center"
+                    ></i>
+                    Jl. Raya Bogor Km. 34, No. 45, Kukusan, Beji, Depok
+                  </p>
+                  <p class="flex items-center opacity-90">
+                    <i
+                      class="fas fa-phone-alt text-white text-xl mr-4 w-6 text-center"
+                    ></i>
+                    <a href="tel:081298982345" class="hover:underline"
+                      >0812-9898-2345</a
+                    >
+                  </p>
+                  <p class="flex items-center opacity-90">
+                    <i
+                      class="fas fa-envelope text-white text-xl mr-4 w-6 text-center"
+                    ></i>
+                    <a
+                      href="mailto:info@unibizkontraktor.com"
+                      class="hover:underline"
+                      >info@unibizkontraktor.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- Peta -->
+              <div class="rounded-2xl shadow-2xl overflow-hidden h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2428366997123!2d106.8285615!3d-6.3677268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed1fe3d1f5b5%3A0x9c6e5c6e5c6e5c6e!2sJl.%20Raya%20Bogor%20No.45%2C%20Kukusan%2C%20Kec.%20Beji%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016425!5e0!3m2!1sen!2sid!4v1635959041234!5m2!1sen!2sid"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p>&copy; 2024 PT Unibiz Kreasindo Utama. All Rights Reserved.</p>
+            <p class="mt-2 text-sm opacity-80">
+              Dibuat dengan ❤️ oleh Tim Unibiz
+            </p>
+          </div>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-white hover:text-blue-300 transition duration-300"
+            >
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white hover:text-blue-300 transition duration-300"
+            >
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white hover:text-blue-300 transition duration-300"
+            >
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white hover:text-blue-300 transition duration-300"
+            >
+              <i class="fab fa-youtube text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script>
+      // Toggle Mobile Menu
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Form Submission Handler
+      const contactForm = document.getElementById("contact-form");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Mencegah form dari pengiriman standar
+        alert(
+          "Terima kasih! Pesan Anda telah kami terima. Kami akan segera menghubungi Anda."
+        );
+        contactForm.reset(); // Mengosongkan form setelah submit
+      });
+
+      // Fade In Animation on Scroll
+      const observerOptions = {
+        root: null, // relative to the viewport
+        threshold: 0.1, // 10% of the element is visible
+        rootMargin: "0px 0px -50px 0px", // start animation a bit earlier
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop observing the element once it's visible
+          }
+        });
+      }, observerOptions);
+
+      // Target all elements with the 'fade-in-up' class
+      const faders = document.querySelectorAll(".fade-in-up");
+      faders.forEach((fader) => {
+        observer.observe(fader);
+      });
+
+      // Fungsi untuk toggle akordion
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const allContents = document.querySelectorAll(".accordion-content");
+        const allIcons = document.querySelectorAll(".accordion-icon");
+        const allButtons = document.querySelectorAll(".accordion-button");
+
+        // Tutup semua konten lain
+        allContents.forEach((item) => {
+          if (item.id !== id) {
+            item.classList.add("hidden");
+          }
+        });
+
+        // Reset ikon semua tombol
+        allIcons.forEach((icon) => {
+          icon.classList.remove("rotate-180");
+        });
+
+        // Buka/tutup konten yang diklik
+        content.classList.toggle("hidden");
+
+        // Putar ikon jika konten terbuka
+        if (!content.classList.contains("hidden")) {
+          const currentIcon =
+            content.previousElementSibling.querySelector(".accordion-icon");
+          currentIcon.classList.add("rotate-180");
+        }
+      }
+
+      // --- Kode JavaScript untuk Lightbox Gallery ---
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.getElementById("lightbox-close");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const imgSrc = item.getAttribute("src");
+          lightboxImg.setAttribute("src", imgSrc);
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+        });
+      });
+
+      // Fungsi untuk menutup lightbox
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+      }
+
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      // Menutup lightbox saat klik di area luar gambar
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("glass-dark");
+          header.classList.remove("glass");
+        } else {
+          header.classList.add("glass");
+          header.classList.remove("glass-dark");
+        }
+      });
+    </script>
+  </body>
 </html>
