@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PT Unibiz Kreasindo Utama | Kontraktor Profesional Depok</title>
 
+    <link rel="shortcut icon" href="img/logo-unibiz.jpg" type="image/x-icon">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -36,8 +38,8 @@
             colors: {
               glass: "rgba(255, 255, 255, 0.1)",
               "glass-dark": "rgba(0, 0, 0, 0.1)",
-              primary: "#1e40af",
-              "primary-dark": "#1e3a8a",
+              primary: "#16a34a", // Changed to green
+              "primary-dark": "#15803d", // Changed to darker green
             },
           },
         },
@@ -77,11 +79,11 @@
 
       /* Gradient backgrounds */
       .gradient-bg {
-        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); /* Changed to green */
       }
 
       .gradient-bg-light {
-        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); /* Changed to green */
       }
 
       /* Custom scrollbar */
@@ -94,12 +96,12 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        background: #1e40af;
+        background: #16a34a; /* Changed to green */
         border-radius: 4px;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: #1e3a8a;
+        background: #15803d; /* Changed to darker green */
       }
 
       /* Floating animation */
@@ -152,149 +154,188 @@
     </style>
   </head>
   <body class="bg-gray-50">
-    <!-- Header & Navigasi -->
-    <header
-      class="bg-white/95 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300"
-    >
-      <nav class="container mx-auto px-6 py-3">
-        <div class="flex justify-between items-center">
-          <!-- Logo -->
-          <a
-            href="#home"
-            class="text-xl font-bold text-gray-800 flex items-center"
-          >
-            <div class="bg-blue-600 p-2 rounded-lg mr-3">
-              <i class="fas fa-hard-hat text-white text-lg"></i>
-            </div>
-            <span>Unibiz Kontraktor</span>
-          </a>
+<!-- Header & Navigasi -->
+<header
+  class="bg-white/95 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300"
+>
+  <nav class="container mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <a
+        href="#home"
+        class="text-xl font-bold text-gray-800 flex items-center"
+      >
+        <img
+          src="img/logo-unibiz.jpg"
+          alt="Logo Unibiz"
+          class="h-14 w-auto rounded-lg shadow-md mr-3"
+        />
+        <!-- <span>Unibiz Kontraktor</span> -->
+      </a>
 
-          <!-- Menu Desktop -->
-          <div class="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="home"
-              >Beranda</a
-            >
-            <a
-              href="#about"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="about"
-              >Tentang</a
-            >
-            <a
-              href="#seputar-pt"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="seputar-pt"
-              >Seputar</a
-            >
-            <a
-              href="#services"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="services"
-              >Layanan</a
-            >
-            <a
-              href="#keunggulan"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="keunggulan"
-              >Keunggulan</a
-            >
-            <a
-              href="#faq"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="faq"
-              >FAQ</a
-            >
-            <a
-              href="#contact"
-              class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 font-medium py-2"
-              data-section="contact"
-              >Kontak</a
-            >
-          </div>
-
-          <!-- Tombol Hubungi Kami (Desktop) -->
-          <!-- <a
-            href="#contact"
-            class="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold shadow-md"
-          >
-            Hubungi Kami
-          </a> -->
-
-          <!-- Tombol Menu Mobile -->
-          <button
-            id="mobile-menu-button"
-            class="md:hidden focus:outline-none text-gray-600"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Menu Mobile -->
-        <div
-          id="mobile-menu"
-          class="hidden md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border"
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex space-x-8">
+        <a
+          href="#home"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="home"
+          >Beranda</a
         >
-          <a
-            href="#home"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="home"
-            >Beranda</a
-          >
-          <a
-            href="#about"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="about"
-            >Tentang</a
-          >
-          <a
-            href="#seputar-pt"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="seputar-pt"
-            >Seputar</a
-          >
-          <a
-            href="#services"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="services"
-            >Layanan</a
-          >
-          <a
-            href="#keunggulan"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="keunggulan"
-            >Keunggulan</a
-          >
-          <a
-            href="#faq"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300 border-b"
-            data-section="faq"
-            >FAQ</a
-          >
-          <a
-            href="#contact"
-            class="nav-link block py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition duration-300"
-            data-section="contact"
-            >Kontak</a
-          >
-        </div>
-      </nav>
-    </header>
+        <a
+          href="#about"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="about"
+          >Tentang</a
+        >
+        <a
+          href="#seputar-pt"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="seputar-pt"
+          >Seputar</a
+        >
+        <a
+          href="#services"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="services"
+          >Layanan</a
+        >
+        <a
+          href="#keunggulan"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="keunggulan"
+          >Keunggulan</a
+        >
+        <a
+          href="#gallery"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="gallery"
+          >Galeri</a
+        >
+        <a
+          href="#faq"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="faq"
+          >FAQ</a
+        >
+        <a
+          href="#contact"
+          class="nav-link text-gray-600 hover:text-green-600 transition duration-300 font-medium py-2"
+          data-section="contact"
+          >Kontak</a
+        >
+      </div>
+
+      <!-- Tombol Menu Mobile -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden focus:outline-none text-gray-600"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border"
+    >
+      <a
+        href="#home"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="home"
+        >Beranda</a
+      >
+      <a
+        href="#about"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="about"
+        >Tentang</a
+      >
+      <a
+        href="#seputar-pt"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="seputar-pt"
+        >Seputar</a
+      >
+      <a
+        href="#services"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="services"
+        >Layanan</a
+      >
+      <a
+        href="#keunggulan"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="keunggulan"
+        >Keunggulan</a
+      >
+      <a
+        href="#gallery"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="gallery"
+        >Galeri</a
+      >
+      <a
+        href="#faq"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300 border-b"
+        data-section="faq"
+        >FAQ</a
+      >
+      <a
+        href="#contact"
+        class="nav-link block py-3 px-4 text-gray-600 hover:text-green-600 hover:bg-green-50 transition duration-300"
+        data-section="contact"
+        >Kontak</a
+      >
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Ubah ikon menu ketika dibuka/ditutup
+        const icon = mobileMenuButton.querySelector('svg');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        } else {
+          icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+        }
+      });
+
+      // Tutup menu mobile ketika link diklik
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          // Kembalikan ikon ke keadaan semula
+          const icon = mobileMenuButton.querySelector('svg');
+          icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        });
+      });
+    }
+  });
+</script>
 
     <script>
       // Function untuk update active nav link
@@ -319,7 +360,7 @@
 
         // Remove active class dari semua links
         navLinks.forEach((link) => {
-          link.classList.remove("text-blue-600", "font-semibold");
+          link.classList.remove("text-green-600", "font-semibold");
           link.classList.add("text-gray-600");
         });
 
@@ -330,7 +371,7 @@
           );
           if (activeLink) {
             activeLink.classList.remove("text-gray-600");
-            activeLink.classList.add("text-blue-600", "font-semibold");
+            activeLink.classList.add("text-green-600", "font-semibold");
           }
         }
       }
@@ -381,29 +422,29 @@
 
       /* Active link styles */
       .nav-link.active {
-        color: #2563eb;
+        color: #16a34a; /* Changed to green */
         font-weight: 600;
       }
 
       /* Optional: Add a subtle underline for active link */
-      .nav-link.text-blue-600 {
+      .nav-link.text-green-600 {
         position: relative;
       }
 
-      .nav-link.text-blue-600::after {
+      .nav-link.text-green-600::after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #2563eb;
+        background-color: #16a34a; /* Changed to green */
         transform: scaleX(1);
         transition: transform 0.3s ease;
       }
 
       /* For mobile menu active links */
-      #mobile-menu .nav-link.text-blue-600::after {
+      #mobile-menu .nav-link.text-green-600::after {
         bottom: 12px;
         width: 4px;
         height: 20px;
@@ -423,19 +464,26 @@
           background-position: center;
         "
       >
-        <!-- Overlay gradasi biru -->
+        <!-- Overlay gradasi hijau -->
         <div
-          class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-600/50"
+          class="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-600/50"
         ></div>
 
         <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <!-- Logo di Hero -->
+          <!-- <div class="flex justify-center mb-6">
+            <div class="bg-white p-4 rounded-2xl shadow-lg">
+              <img src="img/logo-unibiz.jpg" alt="Logo Unibiz" class="h-24 w-auto" />
+            </div>
+          </div> -->
+          
           <!-- Main Heading -->
           <h1 class="text-5xl md:text-6xl font-bold mb-6">
             Kontraktor Profesional
           </h1>
 
           <!-- Subtitle -->
-          <p class="text-xl md:text-2xl mb-10 text-blue-100">
+          <p class="text-xl md:text-2xl mb-10 text-green-100">
             Wujudkan rumah impian Anda dengan kualitas terbaik
           </p>
 
@@ -443,14 +491,14 @@
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#contact"
-              class="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition duration-300 font-semibold"
+              class="bg-white text-green-900 px-8 py-4 rounded-lg hover:bg-green-50 transition duration-300 font-semibold"
             >
               Konsultasi Gratis
             </a>
 
             <a
-              href="#projects"
-              class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-900 transition duration-300 font-semibold"
+              href="#gallery"
+              class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-green-900 transition duration-300 font-semibold"
             >
               Lihat Proyek
             </a>
@@ -466,7 +514,7 @@
       </section>
 
       <!-- Tentang Kami / Profil Perusahaan -->
-      <section id="about" class="py-20 bg-gradient-to-br from-white to-blue-50">
+      <section id="about" class="py-20 bg-gradient-to-br from-white to-green-50">
         <div class="container mx-auto px-6">
           <div class="flex flex-col lg:flex-row items-center gap-12">
             <!-- Gambar -->
@@ -511,8 +559,8 @@
                   <div
                     class="flex items-center p-3 bg-white rounded-xl shadow-md"
                   >
-                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                      <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                    <div class="bg-green-100 p-3 rounded-lg mr-4">
+                      <i class="fas fa-file-alt text-green-600 text-xl"></i>
                     </div>
                     <div>
                       <p class="text-xs text-gray-500">NIB</p>
@@ -522,8 +570,8 @@
                   <div
                     class="flex items-center p-3 bg-white rounded-xl shadow-md"
                   >
-                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                      <i class="fas fa-award text-blue-600 text-xl"></i>
+                    <div class="bg-green-100 p-3 rounded-lg mr-4">
+                      <i class="fas fa-award text-green-600 text-xl"></i>
                     </div>
                     <div>
                       <p class="text-xs text-gray-500">Asosiasi</p>
@@ -533,7 +581,7 @@
                 </div>
 
                 <div
-                  class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-xl mb-6"
+                  class="bg-green-50 border-l-4 border-green-600 p-4 rounded-xl mb-6"
                 >
                   <p class="text-sm text-gray-700">
                     Kami menerapkan standar mutu dan keamanan yang mengacu pada
@@ -551,8 +599,8 @@
                 </h3>
                 <ul class="space-y-2 text-gray-600 mb-6">
                   <li class="flex items-start">
-                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
-                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-green-600 text-xs"></i>
                     </div>
                     <span
                       ><strong>BG002:</strong> Konstruksi Gedung
@@ -560,24 +608,24 @@
                     >
                   </li>
                   <li class="flex items-start">
-                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
-                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-green-600 text-xs"></i>
                     </div>
                     <span
                       ><strong>BG003:</strong> Konstruksi Gedung Industri</span
                     >
                   </li>
                   <li class="flex items-start">
-                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
-                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-green-600 text-xs"></i>
                     </div>
                     <span
                       ><strong>BG005:</strong> Konstruksi Gedung Kesehatan</span
                     >
                   </li>
                   <li class="flex items-start">
-                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
-                      <i class="fas fa-check text-blue-600 text-xs"></i>
+                    <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-check text-green-600 text-xs"></i>
                     </div>
                     <span
                       ><strong>EL007:</strong> Instalasi Jaringan Listrik
@@ -585,10 +633,10 @@
                     >
                   </li>
                   <li
-                    class="flex items-start text-sm font-semibold text-blue-600"
+                    class="flex items-start text-sm font-semibold text-green-600"
                   >
-                    <div class="bg-blue-100 p-1 rounded-full mr-3 mt-1">
-                      <i class="fas fa-ellipsis-h text-blue-600 text-xs"></i>
+                    <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                      <i class="fas fa-ellipsis-h text-green-600 text-xs"></i>
                     </div>
                     <span>Dan 6 layanan terkait lainnya.</span>
                   </li>
@@ -631,7 +679,7 @@
                 <i class="fas fa-history text-2xl"></i>
               </div>
               <h3 class="text-4xl font-bold mb-2">
-                X+<span class="text-blue-200"> Tahun</span>
+                X+<span class="text-green-200"> Tahun</span>
               </h3>
               <p class="opacity-90">Pengalaman Luas</p>
             </div>
@@ -644,7 +692,7 @@
                 <i class="fas fa-check-circle text-2xl"></i>
               </div>
               <h3 class="text-4xl font-bold mb-2">
-                100+<span class="text-blue-200"> Proyek</span>
+                100+<span class="text-green-200"> Proyek</span>
               </h3>
               <p class="opacity-90">Task Finished</p>
             </div>
@@ -657,7 +705,7 @@
                 <i class="fas fa-users text-2xl"></i>
               </div>
               <h3 class="text-4xl font-bold mb-2">
-                20+<span class="text-blue-200"> Orang</span>
+                20+<span class="text-green-200"> Orang</span>
               </h3>
               <p class="opacity-90">Tim Profesional</p>
             </div>
@@ -685,7 +733,7 @@
             </p>
             <a
               href="#contact"
-              class="bg-white text-primary px-8 py-3 rounded-full hover:bg-blue-50 transition duration-300 font-semibold shadow-lg inline-flex items-center"
+              class="bg-white text-primary px-8 py-3 rounded-full hover:bg-green-50 transition duration-300 font-semibold shadow-lg inline-flex items-center"
             >
               <i class="fas fa-phone-alt mr-2"></i> Hubungi Kami Sekarang
             </a>
@@ -719,7 +767,7 @@
             <div class="mb-4">
               <button
                 onclick="toggleAccordion('bangunan')"
-                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span
                   class="text-lg font-semibold text-gray-800 flex items-center"
@@ -747,11 +795,11 @@
               >
                 <!-- Service Card 1 -->
                 <div
-                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-300"
                 >
                   <div class="flex items-start">
                     <span
-                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
                       >BG002</span
                     >
                     <div>
@@ -768,11 +816,11 @@
                 </div>
                 <!-- Service Card 2 -->
                 <div
-                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-300"
                 >
                   <div class="flex items-start">
                     <span
-                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
                       >BG003</span
                     >
                     <div>
@@ -789,11 +837,11 @@
                 </div>
                 <!-- Service Card 3 -->
                 <div
-                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-all duration-300"
+                  class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 hover:shadow-xl transition-all duration-300"
                 >
                   <div class="flex items-start">
                     <span
-                      class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
+                      class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-4"
                       >BG005</span
                     >
                     <div>
@@ -815,7 +863,7 @@
             <div class="mb-4">
               <button
                 onclick="toggleAccordion('listrik')"
-                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span
                   class="text-lg font-semibold text-gray-800 flex items-center"
@@ -910,7 +958,7 @@
             <div class="mb-4">
               <button
                 onclick="toggleAccordion('mekanikal')"
-                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full glass text-left p-5 rounded-2xl shadow-lg flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span
                   class="text-lg font-semibold text-gray-800 flex items-center"
@@ -1024,7 +1072,7 @@
       <!-- Keunggulan Kami -->
       <section
         id="keunggulan"
-        class="py-20 bg-gradient-to-br from-white to-blue-50"
+        class="py-20 bg-gradient-to-br from-white to-green-50"
       >
         <div class="container mx-auto px-6">
           <!-- Header Section -->
@@ -1046,9 +1094,9 @@
               class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
             >
               <div
-                class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-users text-blue-600 text-2xl"></i>
+                <i class="fas fa-users text-green-600 text-2xl"></i>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
                 Tim Profesional
@@ -1082,9 +1130,9 @@
               class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
             >
               <div
-                class="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-shield-alt text-yellow-600 text-2xl"></i>
+                <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
                 Kejujuran & Security
@@ -1100,9 +1148,9 @@
               class="text-center p-6 rounded-2xl glass shadow-lg hover:shadow-xl transition-all duration-300 fade-in-up"
             >
               <div
-                class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <i class="fas fa-handshake text-purple-600 text-2xl"></i>
+                <i class="fas fa-handshake text-green-600 text-2xl"></i>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
                 Budaya Kerja
@@ -1323,7 +1371,7 @@
       </div>
 
       <!-- FAQ Section -->
-      <section id="faq" class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <section id="faq" class="py-20 bg-gradient-to-br from-green-50 to-white">
         <div class="container mx-auto px-6">
           <!-- Header Section -->
           <div class="text-center mb-12 fade-in-up">
@@ -1343,7 +1391,7 @@
             <div class="glass rounded-2xl shadow-lg overflow-hidden">
               <button
                 onclick="toggleAccordion('faq-0')"
-                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span class="font-semibold text-gray-800"
                   >Bagaimana proses kerja sama dengan perusahaan konstruksi
@@ -1377,7 +1425,7 @@
             <div class="glass rounded-2xl shadow-lg overflow-hidden">
               <button
                 onclick="toggleAccordion('faq-1')"
-                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span class="font-semibold text-gray-800"
                   >Apakah perusahaan Anda menerima subkontrak atau proyek
@@ -1409,7 +1457,7 @@
             <div class="glass rounded-2xl shadow-lg overflow-hidden">
               <button
                 onclick="toggleAccordion('faq-2')"
-                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span class="font-semibold text-gray-800"
                   >Bagaimana perusahaan Anda memastikan kepatuhan terhadap
@@ -1442,7 +1490,7 @@
             <div class="glass rounded-2xl shadow-lg overflow-hidden">
               <button
                 onclick="toggleAccordion('faq-3')"
-                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span class="font-semibold text-gray-800"
                   >Apakah perusahaan Anda memiliki program keberlanjutan atau
@@ -1475,7 +1523,7 @@
             <div class="glass rounded-2xl shadow-lg overflow-hidden">
               <button
                 onclick="toggleAccordion('faq-4')"
-                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300"
+                class="accordion-button w-full text-left p-5 rounded-2xl flex justify-between items-center hover:bg-white hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-300"
               >
                 <span class="font-semibold text-gray-800"
                   >Bagaimana cara mengajukan penawaran kerjasama dengan
@@ -1578,7 +1626,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="w-full bg-white text-primary py-3 rounded-lg hover:bg-blue-50 transition duration-300 font-semibold shadow-lg"
+                  class="w-full bg-white text-primary py-3 rounded-lg hover:bg-green-50 transition duration-300 font-semibold shadow-lg"
                 >
                   Kirim Pesan
                 </button>
@@ -1637,7 +1685,10 @@
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-4 md:mb-0">
-            <p>&copy; 2024 PT Unibiz Kreasindo Utama. All Rights Reserved.</p>
+            <div class="flex items-center">
+              <img src="img/logo-unibiz.jpg" alt="Logo Unibiz" class="h-8 w-auto mr-3" />
+              <p>&copy; 2024 PT Unibiz Kreasindo Utama. All Rights Reserved.</p>
+            </div>
             <p class="mt-2 text-sm opacity-80">
               Dibuat dengan ❤️ oleh Tim Unibiz
             </p>
@@ -1645,25 +1696,25 @@
           <div class="flex space-x-4">
             <a
               href="#"
-              class="text-white hover:text-blue-300 transition duration-300"
+              class="text-white hover:text-green-300 transition duration-300"
             >
               <i class="fab fa-facebook-f text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-white hover:text-blue-300 transition duration-300"
+              class="text-white hover:text-green-300 transition duration-300"
             >
               <i class="fab fa-instagram text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-white hover:text-blue-300 transition duration-300"
+              class="text-white hover:text-green-300 transition duration-300"
             >
               <i class="fab fa-linkedin-in text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-white hover:text-blue-300 transition duration-300"
+              class="text-white hover:text-green-300 transition duration-300"
             >
               <i class="fab fa-youtube text-xl"></i>
             </a>
